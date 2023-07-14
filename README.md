@@ -29,4 +29,5 @@ after building, we then tell Jenkins to retain build artifacts into our NFS serv
 2. create a freestyle project on jenkins and add the repo to Jenkins as our source code.
 3. install the plugin called "publish over ssh" on the NFS server and add the key file of our NFS server, also include the hostname, IP, and username.
 4. this should be done on the Post-build-action on your project.
+5. To confirm,change anything on the readme file or add another file and watch it appear on the nfs server.
    
