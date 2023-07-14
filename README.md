@@ -20,9 +20,13 @@ sudo apt-get install Jenkins
 7. Great!, now login to jenkins dashboard by using the Public ip and port 8080:
      <public-ip>:8080
 8. perform the setup and create a user profile.
+----------------------------------------------------------------------------------------------------
+We are going to continue the project by configuring Jenkins to pull code changes automatically from our source code repository.
+We will give Jenkins permission to our GitHub repo of the tooling app to check for updates on our source code and pull the changes to create a build.
+after building, we then tell Jenkins to retain build artifacts into our NFS server:
 
-=================================================================================================
-We are going to continue the project by configuring jenkins to pull code changes automatically from our source code repository.
-We will give jenkins the permission to our github repo of the tooling app to check for updates on our source code and pull the changes to create a build.
-after building,we then tell jenkins to retain build artifacts into our NFS server.
+1. enable webhook to the GitHub repo and include the jenkins URL.
+2. create a freestyle project on jenkins and add the repo to Jenkins as our source code.
+3. install the plugin called "publish over ssh" on the NFS server and add the key file of our NFS server, also include the hostname, IP, and username.
+4. this should be done on the Post-build-action on your project.
    
